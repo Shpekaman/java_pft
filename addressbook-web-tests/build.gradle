@@ -1,6 +1,5 @@
 apply plugin: 'java'
-apply plugin: 'application'
-mainClassName = "MyFirstProgram"
+
 
 repositories {
     mavenCentral()
@@ -9,6 +8,7 @@ repositories {
 dependencies {
     implementation('org.slf4j:slf4j-nop:1.7.25')
     testImplementation group: 'org.testng', name: 'testng', version: '7.10.2'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.25.0'
     }
 test {
     useTestNG()
