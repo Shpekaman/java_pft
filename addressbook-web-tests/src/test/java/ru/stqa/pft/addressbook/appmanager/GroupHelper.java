@@ -20,7 +20,7 @@ public class GroupHelper extends HelperBase {
     }
 
     public void initGroupCreation() {
-        click(By.name("group_name"));
+        click(By.name("new"));
     }
 
     public void CreationGroupCreation(GroupData groupData) {
@@ -34,6 +34,17 @@ public class GroupHelper extends HelperBase {
     }
 
     public void selectGroup() {
-        click(By.xpath("//input[@title = \"Select (test4)\"]"));
+        click(By.name("selected[]"));
+    }
+
+
+
+
+    public void initGroupModification() {
+        click(By.xpath("//input[@value = \"Edit group\"]"));
+    }
+
+    public void submitGroupModification() {
+        click(By.xpath("//input[@value = \"Update\"]"));
     }
 }

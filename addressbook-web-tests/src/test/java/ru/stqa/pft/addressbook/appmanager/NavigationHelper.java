@@ -10,8 +10,10 @@ public class NavigationHelper extends HelperBase {
     }
 
     public void gotoGroupPage() {
-        click(By.name("searchform"));
         click(By.linkText("groups"));
-        click(By.name("new"));
+    }
+
+    public void gotoAddNewContact() {
+        click(By.linkText("add new"));
     }
 }

@@ -9,8 +9,11 @@ public class ApplicationManager {
     WebDriver driver;
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
+    private ContactHelper contactHelper;
 
     public StringBuffer verificationErrors = new StringBuffer();
+
+
 
 
     public void init() {
@@ -18,12 +21,13 @@ public class ApplicationManager {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
         driver.get("http://localhost/addressbook/");
         driver.manage().window().setSize(new Dimension(1008, 696));
-        groupHelper = new GroupHelper(navigationHelper.driver);
+        groupHelper = new GroupHelper(driver);
         navigationHelper = new NavigationHelper(driver);
+        contactHelper = new ContactHelper(driver);
         SessionHelper sessionHelper = new SessionHelper(driver);
         sessionHelper.login("admin", "secret");
     }
-    
+
 
     public void stop() {
         driver.quit();
@@ -37,5 +41,9 @@ public class ApplicationManager {
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 }
